@@ -105,3 +105,20 @@ const treesOnTracks = hazardWarningCreator('Trees on tracks!');
 const icyRoad = hazardWarningCreator('Icy road!');
 
 rocksWarning('Main St and Pacific Ave');
+
+const ogSteps = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+function turtleMovements(ogSteps){
+  const turtleSteps = ogSteps.flat().filter( step => step >= 0);
+
+  return turtleSteps;
+}
+
+function totalMovements(ogSteps){
+  let total = 0;
+  const totalSteps = ogSteps.flat().map(step => Math.abs(step))
+    .map(step => total += step);
+
+  return total;
+}
+
