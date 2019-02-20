@@ -122,3 +122,16 @@ function totalMovements(ogSteps){
   return total;
 }
 
+const 
+function decode(string){
+  const wordArray = string.split(' ')
+    .reduce((accumulator, initialValue) => {
+      if (initialValue.length === 3){
+        return accumulator + ' ';
+      }
+      else {
+        return accumulator + initialValue[initialValue.length-1].toUpperCase();
+      }
+    }, 0);
+  return wordArray;
+}
