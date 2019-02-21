@@ -109,7 +109,7 @@ rocksWarning('Main St and Pacific Ave');
 const ogSteps = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
 function turtleMovements(ogSteps){
-  const turtleSteps = ogSteps.flat().filter( step => step >= 0);
+  const turtleSteps = ogSteps.filter( step => step[0] >= 0 && step[1] >= 0);
 
   return turtleSteps;
 }
@@ -132,6 +132,6 @@ function decode(string){
       else {
         return accumulator + initialValue[initialValue.length-1].toUpperCase();
       }
-    }, 0);
+    }, '');
   return wordArray;
 }
